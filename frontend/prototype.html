@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JSON 数据对比工具 · Prototype</title>
+<script src="https://storage.360buyimg.com/dist-dev/joycoder/fe-page-cdn/tailwindcss.js"></script>
+<script src="https://storage.360buyimg.com/dist-dev/joycoder/fe-page-cdn/lucide.js"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          border: "hsl(214.3 31.8% 91.4%)",
+          input: "hsl(214.3 31.8% 91.4%)",
+          ring: "hsl(222.2 84% 4.9%)",
+          background: "hsl(0 0% 100%)",
+          foreground: "hsl(222.2 84% 4.9%)",
+          primary: { DEFAULT: "hsl(222.2 47.4% 11.2%)", foreground: "hsl(210 40% 98%)" },
+          secondary: { DEFAULT: "hsl(210 40% 96%)", foreground: "hsl(222.2 84% 4.9%)" },
+          muted: { DEFAULT: "hsl(210 40% 96%)", foreground: "hsl(215.4 16.3% 46.9%)" },
+          accent: { DEFAULT: "hsl(210 40% 96%)", foreground: "hsl(222.2 84% 4.9%)" },
+          destructive: { DEFAULT: "hsl(0 72% 51%)", foreground: "hsl(210 40% 98%)" },
+          success: { DEFAULT: "hsl(142 71% 45%)", foreground: "hsl(0 0% 100%)" },
+          card: { DEFAULT: "hsl(0 0% 100%)", foreground: "hsl(222.2 84% 4.9%)" },
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+  .mono { font-family: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace; }
+  .scroll-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+  .scroll-thin::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+  .scroll-thin::-webkit-scrollbar-track { background: transparent; }
+  textarea.json-input {
+    font-family: "JetBrains Mono", Consolas, monospace;
+    font-size: 12.5px;
+    line-height: 1.6;
+    tab-size: 2;
+  }
+  /* JSON 语法高亮 */
+  .tok-key { color: #0550ae; }
+  .tok-str { color: #0a7d3a; }
+  .tok-num { color: #b45309; }
+  .tok-bool { color: #9333ea; }
+  .tok-null { color: #6b7280; font-style: italic; }
+  .tok-punc { color: #475569; }
+  .tree-node { line-height: 1.7; }
+  .tree-toggle { cursor: pointer; user-select: none; display: inline-flex; align-items: center; }
+  .tree-toggle:hover { background: #f1f5f9; border-radius: 3px; }
+  .tree-children { border-left: 1px dashed #e2e8f0; margin-left: 6px; padding-left: 12px; }
+  .badge-type {
+    display: inline-block;
+    padding: 0 6px;
+    font-size: 10px;
+    line-height: 16px;
+    border-radius: 3px;
+    margin-left: 6px;
+    background: #f1f5f9;
+    color: #64748b;
+  }
+  /* 表格 */
+  .diff-row-changed { background: #fef2f2; }
+  .diff-row-changed:hover { background: #fee2e2; }
+  .diff-row-same:hover { background: #f8fafc; }
+  .cell-diff { color: #b91c1c; font-weight: 600; }
+  .cell-same { color: #166534; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 2px 8px; border-radius: 999px;
+    font-size: 11px; font-weight: 500;
+  }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  .rotate-90 { transform: rotate(90deg); }
+  .chev { transition: transform .15s ease; }
+  details[open] > summary .chev { transform: rotate(90deg); }
+  /* tab */
+  .tab-btn { padding: 6px 14px; font-size: 13px; border-radius: 6px; cursor: pointer; color: #64748b; }
+  .tab-btn.active { background: white; color: hsl(222.2 47.4% 11.2%); box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+  .toast {
+    position: fixed; top: 16px; right: 16px; z-index: 50;
+    padding: 10px 16px; border-radius: 8px;
+    color: white; font-size: 13px; font-weight: 500;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    display: flex; align-items: center; gap: 8px;
+    animation: slidein .25s ease;
+  }
+  @keyframes slidein { from { opacity:0; transform: translateY(-6px);} to {opacity:1; transform:none;} }
+</style>
+</head>
+<body class="bg-slate-50 text-foreground min-h-screen">
+
+<!-- 顶部导航 -->
+<header class="bg-white border-b border-border sticky top-0 z-30">
+  <div class="max-w-[1600px] mx-auto px-6 h-14 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-primary text-primary-foreground flex items-center justify-center">
+        <i data-lucide="git-compare-arrows" class="w-4 h-4"></i>
+      </div>
+      <div>
+        <h1 class="text-base font-semibold leading-tight">JSON 数据对比工具</h1>
+        <p class="text-[11px] text-muted-foreground leading-tight">接口数据一致性验证 · 支持字段映射与联合主键匹配</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <button id="btnLoadDemo" class="inline-flex items-center gap-1.5 h-8 px-3 text-xs font-medium rounded-md border border-border bg-white hover:bg-secondary">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>加载示例
+      </button>
+      <button id="btnClearAll" class="inline-flex items-center gap-1.5 h-8 px-3 text-xs font-medium rounded-md border border-border bg-white hover:bg-secondary">
+        <i data-lucide="eraser" class="w-3.5 h-3.5"></i>清空
+      </button>
+      <a class="inline-flex items-center gap-1.5 h-8 px-3 text-xs font-medium rounded-md text-muted-foreground hover:text-foreground" href="#">
+        <i data-lucide="book-open" class="w-3.5 h-3.5"></i>文档
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-[1600px] mx-auto px-6 py-5 space-y-5">
+
+  <!-- 配置区 -->
+  <section class="bg-white rounded-lg border border-border p-4">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-end">
+      <div class="md:col-span-4">
+        <label class="text-xs font-medium text-muted-foreground mb-1.5 block">新数据 JsonPath</label>
+        <div class="relative">
+          <i data-lucide="route" class="w-3.5 h-3.5 absolute left-2.5 top-2.5 text-muted-foreground"></i>
+          <input id="newPath" class="mono w-full h-9 pl-8 pr-3 text-xs border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring/30" value="$.data.list" placeholder="$.data.list" />
+        </div>
+      </div>
+      <div class="md:col-span-4">
+        <label class="text-xs font-medium text-muted-foreground mb-1.5 block">旧数据 JsonPath</label>
+        <div class="relative">
+          <i data-lucide="route" class="w-3.5 h-3.5 absolute left-2.5 top-2.5 text-muted-foreground"></i>
+          <input id="oldPath" class="mono w-full h-9 pl-8 pr-3 text-xs border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring/30" value="$.data.dataList" placeholder="$.data.dataList" />
+        </div>
+      </div>
+      <div class="md:col-span-2">
+        <label class="text-xs font-medium text-muted-foreground mb-1.5 block">联合主键</label>
+        <input id="primaryKey" class="mono w-full h-9 px-3 text-xs border border-input rounded-md bg-secondary text-muted-foreground" value="skuId + storeId" disabled />
+      </div>
+      <div class="md:col-span-2">
+        <button id="btnCompare" class="w-full h-9 inline-flex items-center justify-center gap-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">
+          <i data-lucide="git-compare-arrows" class="w-4 h-4"></i>开始对比
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 双面板输入区 -->
+  <section class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+    <!-- 新接口面板 -->
+    <div class="bg-white rounded-lg border border-border flex flex-col">
+      <div class="flex items-center justify-between px-4 py-2.5 border-b border-border">
+        <div class="flex items-center gap-2">
+          <span class="chip bg-blue-50 text-blue-700"><i data-lucide="arrow-down-to-line" class="w-3 h-3"></i>NEW</span>
+          <span class="text-sm font-semibold">新接口数据</span>
+          <span id="newStatus" class="text-[11px] text-muted-foreground">未校验</span>
+        </div>
+        <div class="bg-secondary rounded-md p-0.5 flex gap-0.5">
+          <button data-panel="new" data-tab="source" class="tab-btn active">
+            <i data-lucide="code-2" class="w-3.5 h-3.5 inline -mt-0.5"></i> 源码
+          </button>
+          <button data-panel="new" data-tab="tree" class="tab-btn">
+            <i data-lucide="list-tree" class="w-3.5 h-3.5 inline -mt-0.5"></i> 可视化
+          </button>
+        </div>
+      </div>
+      <div class="px-3 py-2 border-b border-border flex items-center gap-1 bg-slate-50/50">
+        <button data-action="format" data-panel="new" class="toolbtn"><i data-lucide="wand-2" class="w-3 h-3"></i>格式化</button>
+        <button data-action="validate" data-panel="new" class="toolbtn"><i data-lucide="badge-check" class="w-3 h-3"></i>校验</button>
+        <button data-action="compress" data-panel="new" class="toolbtn"><i data-lucide="minimize-2" class="w-3 h-3"></i>压缩</button>
+        <button data-action="copy" data-panel="new" class="toolbtn"><i data-lucide="copy" class="w-3 h-3"></i>复制</button>
+        <button data-action="clear" data-panel="new" class="toolbtn"><i data-lucide="x" class="w-3 h-3"></i>清空</button>
+        <span class="ml-auto text-[11px] text-muted-foreground" id="newMeta">0 字符</span>
+      </div>
+      <div class="flex-1 relative" style="min-height: 420px;">
+        <textarea id="newSource" data-panel="new" data-view="source" class="json-input scroll-thin absolute inset-0 w-full h-full p-3 border-0 resize-none focus:outline-none" placeholder='粘贴新接口返回的 JSON 数据，例如：&#10;{&#10;  "code": "000000",&#10;  "data": { "list": [...] }&#10;}'></textarea>
+        <div id="newTree" data-panel="new" data-view="tree" class="json-input scroll-thin absolute inset-0 w-full h-full p-3 overflow-auto hidden bg-white"></div>
+      </div>
+    </div>
+
+    <!-- 旧接口面板 -->
+    <div class="bg-white rounded-lg border border-border flex flex-col">
+      <div class="flex items-center justify-between px-4 py-2.5 border-b border-border">
+        <div class="flex items-center gap-2">
+          <span class="chip bg-amber-50 text-amber-700"><i data-lucide="archive" class="w-3 h-3"></i>OLD</span>
+          <span class="text-sm font-semibold">旧接口数据</span>
+          <span id="oldStatus" class="text-[11px] text-muted-foreground">未校验</span>
+        </div>
+        <div class="bg-secondary rounded-md p-0.5 flex gap-0.5">
+          <button data-panel="old" data-tab="source" class="tab-btn active">
+            <i data-lucide="code-2" class="w-3.5 h-3.5 inline -mt-0.5"></i> 源码
+          </button>
+          <button data-panel="old" data-tab="tree" class="tab-btn">
+            <i data-lucide="list-tree" class="w-3.5 h-3.5 inline -mt-0.5"></i> 可视化
+          </button>
+        </div>
+      </div>
+      <div class="px-3 py-2 border-b border-border flex items-center gap-1 bg-slate-50/50">
+        <button data-action="format" data-panel="old" class="toolbtn"><i data-lucide="wand-2" class="w-3 h-3"></i>格式化</button>
+        <button data-action="validate" data-panel="old" class="toolbtn"><i data-lucide="badge-check" class="w-3 h-3"></i>校验</button>
+        <button data-action="compress" data-panel="old" class="toolbtn"><i data-lucide="minimize-2" class="w-3 h-3"></i>压缩</button>
+        <button data-action="copy" data-panel="old" class="toolbtn"><i data-lucide="copy" class="w-3 h-3"></i>复制</button>
+        <button data-action="clear" data-panel="old" class="toolbtn"><i data-lucide="x" class="w-3 h-3"></i>清空</button>
+        <span class="ml-auto text-[11px] text-muted-foreground" id="oldMeta">0 字符</span>
+      </div>
+      <div class="flex-1 relative" style="min-height: 420px;">
+        <textarea id="oldSource" data-panel="old" data-view="source" class="json-input scroll-thin absolute inset-0 w-full h-full p-3 border-0 resize-none focus:outline-none" placeholder='粘贴旧接口返回的 JSON 数据，例如：&#10;{&#10;  "code": 200,&#10;  "data": { "dataList": [...] }&#10;}'></textarea>
+        <div id="oldTree" data-panel="old" data-view="tree" class="json-input scroll-thin absolute inset-0 w-full h-full p-3 overflow-auto hidden bg-white"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 对比结果区 -->
+  <section id="resultSection" class="bg-white rounded-lg border border-border">
+    <div class="flex items-center justify-between px-5 py-3 border-b border-border">
+      <div class="flex items-center gap-2">
+        <i data-lucide="layout-list" class="w-4 h-4 text-muted-foreground"></i>
+        <h2 class="text-sm font-semibold">对比结果</h2>
+        <span id="resultHint" class="text-[11px] text-muted-foreground">点击 "开始对比" 后展示</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="bg-secondary rounded-md p-0.5 flex gap-0.5" id="filterTabs">
+          <button data-filter="all" class="tab-btn active text-xs">全部</button>
+          <button data-filter="diff" class="tab-btn text-xs">差异</button>
+          <button data-filter="same" class="tab-btn text-xs">一致</button>
+          <button data-filter="only" class="tab-btn text-xs">单边</button>
+        </div>
+        <input id="searchKey" placeholder="搜索主键..." class="mono h-8 w-44 px-3 text-xs border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring/30" />
+        <button id="btnExport" class="inline-flex items-center gap-1.5 h-8 px-3 text-xs font-medium rounded-md border border-border bg-white hover:bg-secondary">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>导出
+        </button>
+      </div>
+    </div>
+
+    <!-- 统计概览 -->
+    <div id="statsBar" class="grid grid-cols-2 md:grid-cols-6 gap-3 p-5 border-b border-border bg-slate-50/40">
+      <div class="stat-card">
+        <div class="text-[11px] text-muted-foreground mb-1">新数据总数</div>
+        <div class="text-xl font-semibold" id="statTotalNew">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="text-[11px] text-muted-foreground mb-1">旧数据总数</div>
+        <div class="text-xl font-semibold" id="statTotalOld">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="text-[11px] text-muted-foreground mb-1">共有记录</div>
+        <div class="text-xl font-semibold text-blue-700" id="statCommon">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="text-[11px] text-muted-foreground mb-1">差异记录</div>
+        <div class="text-xl font-semibold text-red-600" id="statDiff">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="text-[11px] text-muted-foreground mb-1">仅新存在</div>
+        <div class="text-xl font-semibold text-amber-600" id="statOnlyNew">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="text-[11px] text-muted-foreground mb-1">仅旧存在</div>
+        <div class="text-xl font-semibold text-amber-600" id="statOnlyOld">—</div>
+      </div>
+    </div>
+
+    <!-- 结果列表 -->
+    <div id="resultList" class="p-5 space-y-3 min-h-[200px]">
+      <div class="text-center text-sm text-muted-foreground py-16">
+        <i data-lucide="inbox" class="w-10 h-10 mx-auto mb-2 text-slate-300"></i>
+        <p>暂无对比结果，请先在上方面板输入数据后点击 <span class="font-medium text-foreground">"开始对比"</span></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center text-xs text-muted-foreground py-4">
+    JSON 数据对比工具 · sc-parrot-ai / price-qa-skills · Prototype
+  </footer>
+</main>
+
+<!-- 字段映射弹框入口示意（按钮放在配置区右侧，可后续接入） -->
+
+<script>
+/* ============ 样式辅助 ============ */
+const toolBtnCls = "toolbtn";
+document.querySelectorAll('.toolbtn').forEach(b => {});
+// 注入 toolbtn 样式
+const style = document.createElement('style');
+style.textContent = `
+  .toolbtn { display:inline-flex; align-items:center; gap:4px; padding: 4px 8px; font-size: 11.5px;
+    color:#475569; border-radius: 5px; background: transparent; }
+  .toolbtn:hover { background:#f1f5f9; color:#0f172a; }
+  .stat-card { background:white; border:1px solid hsl(214.3 31.8% 91.4%); border-radius: 8px; padding: 10px 12px; }
+`;
+document.head.appendChild(style);
+
+/* ============ 示例数据 ============ */
+const demoNew = {
+  code: "000000",
+  message: "success",
+  data: {
+    list: [
+      { skuId: 67287295489, storeId: "1005517860", shopName: "京东自营旗舰店", dealPrice: 199.00, status: 1, tags: ["热销","新品"] },
+      { skuId: 67287295490, storeId: "1005517861", shopName: "数码生活馆",     dealPrice: 1299.50, status: 1, tags: ["推荐"] },
+      { skuId: 67287295491, storeId: "1005517862", shopName: "美食优选",       dealPrice: 39.90,   status: 0, tags: [] },
+      { skuId: 67287295492, storeId: "1005517863", shopName: "家电直供",       dealPrice: 4599.00, status: 1, tags: ["分期免息"] }
+    ]
+  }
+};
+const demoOld = {
+  code: 200,
+  message: "OK",
+  data: {
+    dataList: [
+      { sku_id: 67287295489, store_id: 1005517860, shop_name: "京东自营旗舰店", deal_price: 199.00, status: 1 },
+      { sku_id: 67287295490, store_id: 1005517861, shop_name: "数码生活馆",   deal_price: 1299.00, status: 1 },
+      { sku_id: 67287295491, store_id: 1005517862, shop_name: "美食优选",     deal_price: 39.90,   status: 1 },
+      { sku_id: 67287295493, store_id: 1005517864, shop_name: "图书旗舰店",   deal_price: 68.00,   status: 1 }
+    ]
+  }
+};
+
+/* ============ Toast ============ */
+function toast(msg, type='success') {
+  const el = document.createElement('div');
+  const color = type==='success' ? 'background:#16a34a' : type==='error' ? 'background:#dc2626' : 'background:#0f172a';
+  el.className = 'toast';
+  el.style.cssText = color;
+  const icon = type==='error' ? 'alert-circle' : type==='success' ? 'check-circle-2' : 'info';
+  el.innerHTML = `<i data-lucide="${icon}" class="w-4 h-4"></i><span>${msg}</span>`;
+  document.body.appendChild(el);
+  lucide.createIcons();
+  setTimeout(() => el.remove(), 2200);
+}
+
+/* ============ JSON 字符串处理 ============ */
+function safeParse(text) {
+  if (!text || !text.trim()) return { ok:false, error:'内容为空' };
+  try { return { ok:true, data: JSON.parse(text) }; }
+  catch(e) {
+    // 提取行列
+    const m = /position\s+(\d+)/.exec(e.message);
+    let info = e.message;
+    if (m) {
+      const pos = +m[1];
+      const before = text.slice(0, pos);
+      const line = before.split('\n').length;
+      const col = pos - before.lastIndexOf('\n');
+      info = `第 ${line} 行第 ${col} 列 - ${e.message}`;
+    }
+    return { ok:false, error: info };
+  }
+}
+
+/* ============ 面板逻辑 ============ */
+const panels = ['new','old'];
+const parsedCache = { new:null, old:null };
+
+function updateMeta(panel) {
+  const ta = document.getElementById(panel+'Source');
+  document.getElementById(panel+'Meta').textContent = `${ta.value.length} 字符`;
+}
+panels.forEach(p => {
+  const ta = document.getElementById(p+'Source');
+  ta.addEventListener('input', () => { updateMeta(p); setStatus(p, '未校验', 'muted'); });
+});
+
+function setStatus(panel, text, type='muted') {
+  const el = document.getElementById(panel+'Status');
+  el.textContent = text;
+  el.className = 'text-[11px] ' + (
+    type==='ok' ? 'text-green-600' :
+    type==='err' ? 'text-red-600' : 'text-muted-foreground'
+  );
+}
+
+/* tab 切换 */
+document.querySelectorAll('[data-tab]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const panel = btn.dataset.panel;
+    const tab = btn.dataset.tab;
+    document.querySelectorAll(`[data-panel="${panel}"][data-tab]`).forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll(`[data-panel="${panel}"][data-view]`).forEach(v => v.classList.add('hidden'));
+    const target = document.querySelector(`[data-panel="${panel}"][data-view="${tab==='source'?'source':'tree'}"]`);
+    target.classList.remove('hidden');
+    if (tab === 'tree') renderTree(panel);
+  });
+});
+
+/* 工具栏 */
+document.querySelectorAll('[data-action]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const action = btn.dataset.action;
+    const panel = btn.dataset.panel;
+    const ta = document.getElementById(panel+'Source');
+    if (action === 'clear') { ta.value=''; updateMeta(panel); setStatus(panel,'未校验'); return; }
+    if (action === 'copy')  { navigator.clipboard.writeText(ta.value).then(()=>toast('已复制到剪贴板')); return; }
+    const r = safeParse(ta.value);
+    if (!r.ok) { setStatus(panel, r.error, 'err'); toast(r.error, 'error'); return; }
+    if (action === 'format')   { ta.value = JSON.stringify(r.data, null, 2); updateMeta(panel); setStatus(panel,'JSON 格式正确','ok'); toast('已格式化'); }
+    if (action === 'compress') { ta.value = JSON.stringify(r.data); updateMeta(panel); setStatus(panel,'JSON 格式正确','ok'); toast('已压缩'); }
+    if (action === 'validate') { setStatus(panel,'JSON 格式正确','ok'); toast('JSON 格式正确'); }
+  });
+});
+
+/* ============ JSON 可视化树 ============ */
+function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&','<':'<','>':'>','"':'"',"'":'&#39;'}[c])); }
+
+function typeOf(v) {
+  if (v === null) return 'null';
+  if (Array.isArray(v)) return 'array';
+  return typeof v;
+}
+function renderValue(v) {
+  const t = typeOf(v);
+  if (t === 'string') return `<span class="tok-str">"${escapeHtml(v)}"</span>`;
+  if (t === 'number') return `<span class="tok-num">${v}</span>`;
+  if (t === 'boolean') return `<span class="tok-bool">${v}</span>`;
+  if (t === 'null') return `<span class="tok-null">null</span>`;
+  return '';
+}
+function renderNode(key, value, isLast=true) {
+  const t = typeOf(value);
+  const keyHtml = key !== null ? `<span class="tok-key">"${escapeHtml(key)}"</span><span class="tok-punc">: </span>` : '';
+  const comma = isLast ? '' : '<span class="tok-punc">,</span>';
+  if (t === 'object' || t === 'array') {
+    const entries = t === 'array' ? value.map((v,i)=>[i,v]) : Object.entries(value);
+    const open = t==='array' ? '[' : '{';
+    const close = t==='array' ? ']' : '}';
+    const count = entries.length;
+    if (count === 0) {
+      return `<div class="tree-node">${keyHtml}<span class="tok-punc">${open}${close}</span>${comma}<span class="badge-type">${t} · 0</span></div>`;
+    }
+    const inner = entries.map(([k,v],i) => renderNode(t==='array'?null:k, v, i===entries.length-1)).join('');
+    // array 子节点 key 用索引
+    const innerArr = t==='array' ? entries.map(([k,v],i)=>{
+      const kk = `<span class="text-muted-foreground text-[11px] mr-1">${k}:</span>`;
+      const sub = renderNode(null, v, i===entries.length-1);
+      return sub.replace('<div class="tree-node">', `<div class="tree-node">${kk}`);
+    }).join('') : inner;
+    return `<details open class="tree-node">
+      <summary>
+        <i data-lucide="chevron-right" class="chev w-3 h-3 inline -mt-0.5 text-muted-foreground"></i>
+        ${keyHtml}<span class="tok-punc">${open}</span>
+        <span class="badge-type">${t} · ${count}</span>
+      </summary>
+      <div class="tree-children">${innerArr}</div>
+      <div><span class="tok-punc">${close}</span>${comma}</div>
+    </details>`;
+  }
+  return `<div class="tree-node" style="padding-left:14px;">${keyHtml}${renderValue(value)}${comma}<span class="badge-type">${t}</span></div>`;
+}
+function renderTree(panel) {
+  const ta = document.getElementById(panel+'Source');
+  const wrap = document.getElementById(panel+'Tree');
+  const r = safeParse(ta.value);
+  if (!r.ok) {
+    wrap.innerHTML = `<div class="text-xs text-red-600 p-2"><i data-lucide="alert-triangle" class="w-3 h-3 inline -mt-0.5"></i> 无法解析 JSON：${escapeHtml(r.error)}</div>`;
+    lucide.createIcons();
+    return;
+  }
+  parsedCache[panel] = r.data;
+  wrap.innerHTML = renderNode(null, r.data, true);
+  lucide.createIcons();
+}
+
+/* ============ JsonPath 提取 ============ */
+function extractByPath(data, path) {
+  if (!path || !path.trim() || path.trim() === '$') return data;
+  let p = path.replace(/^\$\.?/, '');
+  const tokens = [];
+  p.split('.').forEach(seg => {
+    if (!seg) return;
+    const re = /([^\[\]]+)|\[(\d+)\]/g;
+    let m;
+    while ((m = re.exec(seg)) !== null) {
+      tokens.push(m[1] !== undefined ? m[1] : Number(m[2]));
+    }
+  });
+  let cur = data;
+  for (const t of tokens) {
+    if (cur == null) return undefined;
+    cur = cur[t];
+  }
+  return cur;
+}
+
+/* ============ 字段映射 ============ */
+const FIELD_MAP = {
+  skuId:"sku_id", storeId:"store_id", shopName:"shop_name",
+  dealPrice:"deal_price", status:"status", tags:"tags"
+};
+function snake(s) { return s.replace(/[A-Z]/g, c => '_' + c.toLowerCase()); }
+function camel(s) { return s.replace(/_([a-z])/g, (_,c) => c.toUpperCase()); }
+function findOldField(newField, oldObj) {
+  if (FIELD_MAP[newField] && oldObj.hasOwnProperty(FIELD_MAP[newField])) return FIELD_MAP[newField];
+  const s = snake(newField);
+  if (oldObj.hasOwnProperty(s)) return s;
+  if (oldObj.hasOwnProperty(newField)) return newField;
+  return null;
+}
+
+/* ============ 对比逻辑 ============ */
+function buildKey(rec) {
+  const sku = rec.skuId ?? rec.sku_id;
+  const store = rec.storeId ?? rec.store_id;
+  return `${sku}_${store}`;
+}
+function valueEqual(a, b) {
+  if (a === b) return true;
+  if (a == null || b == null) return false;
+  const na = Number(a), nb = Number(b);
+  if (!isNaN(na) && !isNaN(nb)) return na === nb;
+  return String(a) === String(b);
+}
+function jsType(v) {
+  if (v === null) return 'null';
+  if (Array.isArray(v)) return 'array';
+  if (typeof v === 'number') return Number.isInteger(v) ? 'int' : 'float';
+  return typeof v;
+}
+
+function doCompare() {
+  const rNew = safeParse(document.getElementById('newSource').value);
+  const rOld = safeParse(document.getElementById('oldSource').value);
+  if (!rNew.ok) { toast('新数据解析失败：'+rNew.error, 'error'); return; }
+  if (!rOld.ok) { toast('旧数据解析失败：'+rOld.error, 'error'); return; }
+  const newList = extractByPath(rNew.data, document.getElementById('newPath').value);
+  const oldList = extractByPath(rOld.data, document.getElementById('oldPath').value);
+  if (!Array.isArray(newList) || !Array.isArray(oldList)) {
+    toast('JsonPath 提取结果不是数组', 'error'); return;
+  }
+  const newMap = new Map(), oldMap = new Map();
+  newList.forEach(r => newMap.set(buildKey(r), r));
+  oldList.forEach(r => oldMap.set(buildKey(r), r));
+  const onlyInNew = [], onlyInOld = [], comparisons = [];
+  newMap.forEach((rec, k) => { if (!oldMap.has(k)) onlyInNew.push({ key:k, record:rec }); });
+  oldMap.forEach((rec, k) => { if (!newMap.has(k)) onlyInOld.push({ key:k, record:rec }); });
+
+  let diffCount = 0;
+  newMap.forEach((nRec, k) => {
+    if (!oldMap.has(k)) return;
+    const oRec = oldMap.get(k);
+    const fields = [];
+    let hasDiff = false;
+    Object.keys(nRec).forEach(nf => {
+      const of = findOldField(nf, oRec);
+      const nv = nRec[nf]; const ov = of ? oRec[of] : undefined;
+      const same = of !== null && valueEqual(nv, ov);
+      if (!same) hasDiff = true;
+      fields.push({ newField:nf, newVal:nv, newType:jsType(nv),
+                    oldField: of || '(缺失)', oldVal: ov, oldType: of? jsType(ov):'-',
+                    same });
+    });
+    // 检查旧字段中是否有新字段未覆盖到的
+    Object.keys(oRec).forEach(of => {
+      const nf = camel(of);
+      if (!nRec.hasOwnProperty(nf) && !nRec.hasOwnProperty(of)) {
+        fields.push({ newField:'(缺失)', newVal:undefined, newType:'-',
+                      oldField:of, oldVal:oRec[of], oldType:jsType(oRec[of]),
+                      same:false });
+        hasDiff = true;
+      }
+    });
+    if (hasDiff) diffCount++;
+    comparisons.push({ key:k, hasDiff, fields });
+  });
+
+  renderResult({
+    totalNew: newList.length, totalOld: oldList.length,
+    onlyInNew, onlyInOld,
+    commonCount: comparisons.length, diffCount, comparisons
+  });
+  toast(`对比完成：${diffCount} 条差异`);
+}
+
+/* ============ 结果渲染 ============ */
+let currentResult = null;
+let currentFilter = 'all';
+
+function renderResult(res) {
+  currentResult = res;
+  document.getElementById('statTotalNew').textContent = res.totalNew;
+  document.getElementById('statTotalOld').textContent = res.totalOld;
+  document.getElementById('statCommon').textContent = res.commonCount;
+  document.getElementById('statDiff').textContent = res.diffCount;
+  document.getElementById('statOnlyNew').textContent = res.onlyInNew.length;
+  document.getElementById('statOnlyOld').textContent = res.onlyInOld.length;
+  document.getElementById('resultHint').textContent =
+    `${res.totalNew} vs ${res.totalOld} · ${res.diffCount} 差异`;
+  paintList();
+}
+
+function paintList() {
+  const res = currentResult;
+  const list = document.getElementById('resultList');
+  if (!res) return;
+  const kw = document.getElementById('searchKey').value.trim().toLowerCase();
+
+  let items = [];
+  if (currentFilter === 'all' || currentFilter === 'diff' || currentFilter === 'same') {
+    res.comparisons.forEach(c => {
+      if (currentFilter === 'diff' && !c.hasDiff) return;
+      if (currentFilter === 'same' && c.hasDiff) return;
+      if (kw && !c.key.toLowerCase().includes(kw)) return;
+      items.push({ kind:'compare', data:c });
+    });
+  }
+  if (currentFilter === 'all' || currentFilter === 'only') {
+    res.onlyInNew.forEach(r => {
+      if (kw && !r.key.toLowerCase().includes(kw)) return;
+      items.push({ kind:'onlyNew', data:r });
+    });
+    res.onlyInOld.forEach(r => {
+      if (kw && !r.key.toLowerCase().includes(kw)) return;
+      items.push({ kind:'onlyOld', data:r });
+    });
+  }
+
+  if (items.length === 0) {
+    list.innerHTML = `<div class="text-center text-sm text-muted-foreground py-12">
+      <i data-lucide="search-x" class="w-8 h-8 mx-auto mb-2 text-slate-300"></i>没有符合条件的结果</div>`;
+    lucide.createIcons(); return;
+  }
+
+  list.innerHTML = items.map(it => {
+    if (it.kind === 'compare') return renderCompareCard(it.data);
+    if (it.kind === 'onlyNew') return renderOnlyCard(it.data, 'new');
+    if (it.kind === 'onlyOld') return renderOnlyCard(it.data, 'old');
+  }).join('');
+  lucide.createIcons();
+}
+
+function renderCompareCard(c) {
+  const diffNum = c.fields.filter(f=>!f.same).length;
+  const badge = c.hasDiff
+    ? `<span class="chip bg-red-50 text-red-700"><i data-lucide="alert-circle" class="w-3 h-3"></i>${diffNum} 处差异</span>`
+    : `<span class="chip bg-green-50 text-green-700"><i data-lucide="check" class="w-3 h-3"></i>完全一致</span>`;
+  const open = c.hasDiff ? 'open' : '';
+  const rows = c.fields.map(f => {
+    const cls = f.same ? 'diff-row-same' : 'diff-row-changed';
+    const valCls = f.same ? 'cell-same' : 'cell-diff';
+    return `<tr class="${cls} border-b border-border last:border-0">
+      <td class="px-3 py-2 mono text-xs">${escapeHtml(f.newField)}</td>
+      <td class="px-3 py-2 mono text-xs ${valCls}">${formatVal(f.newVal)}</td>
+      <td class="px-3 py-2 text-[11px] text-muted-foreground">${f.newType}</td>
+      <td class="px-3 py-2 mono text-xs">${escapeHtml(f.oldField)}</td>
+      <td class="px-3 py-2 mono text-xs ${valCls}">${formatVal(f.oldVal)}</td>
+      <td class="px-3 py-2 text-[11px] text-muted-foreground">${f.oldType}</td>
+      <td class="px-3 py-2 text-center">${f.same
+        ? '<i data-lucide="check" class="w-3.5 h-3.5 text-green-600 inline"></i>'
+        : '<i data-lucide="x" class="w-3.5 h-3.5 text-red-600 inline"></i>'}</td>
+    </tr>`;
+  }).join('');
+  return `<details ${open} class="border border-border rounded-lg overflow-hidden bg-white">
+    <summary class="flex items-center justify-between px-4 py-2.5 bg-slate-50/60 hover:bg-slate-50">
+      <div class="flex items-center gap-2">
+        <i data-lucide="chevron-right" class="chev w-4 h-4 text-muted-foreground"></i>
+        <span class="mono text-xs font-semibold">${escapeHtml(c.key)}</span>
+        ${badge}
+      </div>
+      <span class="text-[11px] text-muted-foreground">共 ${c.fields.length} 个字段</span>
+    </summary>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left">
+        <thead class="bg-slate-50/80 text-[11px] text-muted-foreground uppercase">
+          <tr>
+            <th class="px-3 py-2 font-medium">新字段</th>
+            <th class="px-3 py-2 font-medium">新值</th>
+            <th class="px-3 py-2 font-medium">类型</th>
+            <th class="px-3 py-2 font-medium">旧字段</th>
+            <th class="px-3 py-2 font-medium">旧值</th>
+            <th class="px-3 py-2 font-medium">类型</th>
+            <th class="px-3 py-2 font-medium text-center">结果</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  </details>`;
+}
+
+function renderOnlyCard(rec, side) {
+  const color = side==='new' ? 'blue' : 'amber';
+  const label = side==='new' ? '仅存在于 新数据' : '仅存在于 旧数据';
+  const icon = side==='new' ? 'plus-circle' : 'minus-circle';
+  return `<div class="border border-border rounded-lg p-3 bg-white flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <i data-lucide="${icon}" class="w-4 h-4 text-${color}-600"></i>
+      <span class="mono text-xs font-semibold">${escapeHtml(rec.key)}</span>
+      <span class="chip bg-${color}-50 text-${color}-700">${label}</span>
+    </div>
+    <details class="text-xs">
+      <summary class="text-muted-foreground hover:text-foreground">查看详情</summary>
+      <pre class="mono text-[11px] mt-2 p-2 bg-slate-50 rounded border border-border max-w-[700px] overflow-auto">${escapeHtml(JSON.stringify(rec.record, null, 2))}</pre>
+    </details>
+  </div>`;
+}
+
+function formatVal(v) {
+  if (v === undefined) return '<span class="text-muted-foreground italic">undefined</span>';
+  if (v === null) return '<span class="tok-null">null</span>';
+  if (typeof v === 'string') return `"${escapeHtml(v)}"`;
+  if (typeof v === 'object') return escapeHtml(JSON.stringify(v));
+  return escapeHtml(String(v));
+}
+
+/* ============ 过滤 / 搜索 ============ */
+document.querySelectorAll('#filterTabs [data-filter]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#filterTabs [data-filter]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    paintList();
+  });
+});
+document.getElementById('searchKey').addEventListener('input', paintList);
+
+/* ============ 按钮事件 ============ */
+document.getElementById('btnCompare').addEventListener('click', doCompare);
+document.getElementById('btnLoadDemo').addEventListener('click', () => {
+  document.getElementById('newSource').value = JSON.stringify(demoNew, null, 2);
+  document.getElementById('oldSource').value = JSON.stringify(demoOld, null, 2);
+  panels.forEach(p => { updateMeta(p); setStatus(p, 'JSON 格式正确', 'ok'); });
+  toast('示例数据已加载，可点击 "开始对比"');
+});
+document.getElementById('btnClearAll').addEventListener('click', () => {
+  panels.forEach(p => {
+    document.getElementById(p+'Source').value = '';
+    updateMeta(p); setStatus(p, '未校验');
+    document.getElementById(p+'Tree').innerHTML = '';
+  });
+  currentResult = null;
+  ['statTotalNew','statTotalOld','statCommon','statDiff','statOnlyNew','statOnlyOld']
+    .forEach(id => document.getElementById(id).textContent = '—');
+  document.getElementById('resultHint').textContent = '点击 "开始对比" 后展示';
+  document.getElementById('resultList').innerHTML = `<div class="text-center text-sm text-muted-foreground py-16">
+    <i data-lucide="inbox" class="w-10 h-10 mx-auto mb-2 text-slate-300"></i>
+    <p>暂无对比结果</p></div>`;
+  lucide.createIcons();
+  toast('已清空');
+});
+document.getElementById('btnExport').addEventListener('click', () => {
+  if (!currentResult) { toast('暂无可导出结果', 'error'); return; }
+  const blob = new Blob([JSON.stringify(currentResult, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `compare-result-${Date.now()}.json`;
+  a.click();
+  toast('结果已导出');
+});
+
+/* ============ 初始化 ============ */
+document.addEventListener('DOMContentLoaded', () => {
+  lucide.createIcons();
+  panels.forEach(updateMeta);
+});
+lucide.createIcons();
+</script>
+</body>
+</html>
