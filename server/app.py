@@ -127,11 +127,10 @@ def build_key(item, primary_keys=None):
     """构造记录主键。
     - primary_keys: 用户指定的主键字段列表（如 ["skuId", "storeId"]），
       支持自动 camel↔snake 互转匹配（即输入 skuId 也能匹配到 sku_id）。
-    - 若未指定或全部字段都取不到值，回退到默认 skuId+storeId 联合主键；
-      仍取不到则返回 '__single__'，用于支持单对象对比场景。
+    - 若未指定或全部字段都取不到值，返回 None，由调用方按记录顺序对齐。
     """
     if not isinstance(item, dict):
-        return "__single__"
+        return None
 
     def get_field(obj, field):
         """从 obj 中按 field 名取值，自动尝试 camel/snake 互转"""
@@ -150,12 +149,7 @@ def build_key(item, primary_keys=None):
         if any(v is not None for v in vals):
             return "_".join("" if v is None else str(v) for v in vals)
 
-    # 默认主键
-    sku = item.get("skuId", item.get("sku_id"))
-    store = item.get("storeId", item.get("store_id"))
-    if sku is None and store is None:
-        return "__single__"
-    return f"{sku}_{store}"
+    return None
 
 
 def parse_separated(value):
@@ -390,8 +384,18 @@ def compare_excel():
 
 def build_compare_result(new_list, old_list, primary_keys=None, ignore_fields=None):
     ignore_fields = set(ignore_fields or [])
-    new_dict = {build_key(it, primary_keys): it for it in new_list}
-    old_dict = {build_key(it, primary_keys): it for it in old_list}
+
+    def build_record_dict(items):
+        records = {}
+        for idx, item in enumerate(items):
+            key = build_key(item, primary_keys)
+            if key is None:
+                key = f"第{idx + 1}条"
+            records[key] = item
+        return records
+
+    new_dict = build_record_dict(new_list)
+    old_dict = build_record_dict(old_list)
 
     only_in_new = [{"key": k, "record": new_dict[k]} for k in new_dict if k not in old_dict]
     only_in_old = [{"key": k, "record": old_dict[k]} for k in old_dict if k not in new_dict]
@@ -399,7 +403,8 @@ def build_compare_result(new_list, old_list, primary_keys=None, ignore_fields=No
 
     comparisons = []
     diff_count = 0
-    for key in sorted(common_keys):
+    ordered_common_keys = sorted(common_keys) if primary_keys else common_keys
+    for key in ordered_common_keys:
         ni, oi = new_dict[key], old_dict[key]
         fields = []
         has_diff = False

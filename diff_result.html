@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<title>JSON数据对比结果</title>
+<style>
+body { font-family: "Microsoft YaHei", sans-serif; margin: 20px; background: #f5f5f5; }
+h1 { color: #333; }
+.summary { background: #fff; padding: 15px; border-radius: 6px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+.summary span { margin-right: 20px; }
+table { border-collapse: collapse; width: 100%; margin-bottom: 20px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+th, td { border: 1px solid #ddd; padding: 6px 10px; text-size: 13px; }
+th { background: #4a90d9; color: #fff; }
+tr:nth-child(even) { background: #f9f9f9; }
+tr.diff { background: #ffe0e0 !important; font-weight: bold; }
+h3 { margin-top: 25px; color: #4a90d9; }
+pre.json-view { background: #f0f4f8; border: 1px solid #ccc; border-radius: 4px; padding: 8px; margin: 0; font-size: 12px; white-space: pre-wrap; word-break: break-all; max-width: 500px; }
+details { margin-bottom: 10px; border: 1px solid #ddd; border-radius: 6px; background: #fff; }
+details summary { cursor: pointer; padding: 10px 15px; font-weight: bold; font-size: 14px; color: #4a90d9; background: #f7f9fc; border-radius: 6px; }
+details summary:hover { background: #eaf1fb; }
+details[open] summary { border-bottom: 1px solid #ddd; border-radius: 6px 6px 0 0; }
+details table { margin: 0; box-shadow: none; }
+</style></head><body>
+<h1>JSON 数据对比结果</h1>
+<div class="summary">
+<p><span>new_data.list 记录数: <b>20</b></span>
+<span>old_data.dataList 记录数: <b>20</b></span></p>
+<p><span>联合主键去重 new: <b>20</b></span>
+<span>联合主键去重 old: <b>20</b></span></p>
+<p><span>仅存在于 new: <b>0</b></span>
+<span>仅存在于 old: <b>0</b></span>
+<span>共有可比较: <b>20</b></span></p>
+<p style="color:red;">存在字段差异的记录: <b>1/20</b></p>
+</div>
+<details><summary>skuId=67287295489 | storeId=1005517860</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287295489</td><td>int</td><td>sku_id</td><td>67287295489</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>海天 辣黄豆酱340g/瓶</td><td>string</td><td>sku_name</td><td>海天 辣黄豆酱340g/瓶</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>粮油调味</td><td>string</td><td>cname1</td><td>粮油调味</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>调味品</td><td>string</td><td>cname2</td><td>调味品</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>烹饪酱</td><td>string</td><td>cname3</td><td>烹饪酱</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>137697</td><td>int</td><td>brand_id</td><td>137697</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>海天</td><td>string</td><td>brand_name</td><td>海天</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L1</td><td>string</td><td>brand_level</td><td>L1</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>一类货</td><td>string</td><td>goods_level</td><td>一类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1005517860</td><td>string</td><td>store_id</td><td>1005517860</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-康营家园</td><td>string</td><td>store_name</td><td>萝卜青菜-康营家园</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td>E</td><td>string</td><td>gmv_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>salesBand</td><td>E</td><td>string</td><td>sales_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>pvBand</td><td></td><td>string</td><td>pv_band</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>gmv</td><td>55.6</td><td>float</td><td>gmv</td><td>55.6</td><td>float</td><td>一致</td></tr>
+<tr><td>sales</td><td>4</td><td>int</td><td>sales</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>11.8</td><td>float</td><td>deal_price</td><td>11.8</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>3.0</td><td>float</td><td>pricestar</td><td>3.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>仅自身</td><td>string</td><td>scope_type</td><td>仅自身</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr class="diff"><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-21 00:00:00</td><td>string</td><td>差异</td></tr>
+<tr><td>last30DaysSv</td><td>4</td><td>int</td><td>last_30_days_sv</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>3</td><td>int</td><td>star</td><td>3</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>4</td><td>int</td><td>scope_type_num</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287295489
+haotengfei.terry
+海天 辣黄豆酱340g/瓶</td><td>string</td><td>sku_info</td><td>67287295489
+haotengfei.terry
+海天 辣黄豆酱340g/瓶</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 11.8,
+  &quot;discountPrice&quot;: 1.0,
+  &quot;benchPrice&quot;: 12.8,
+  &quot;startTime&quot;: &quot;2026-03-01 00:00:00&quot;,
+  &quot;endTime&quot;: &quot;2026-03-31 23:59:59&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    },
+    {
+      &quot;promoType&quot;: 3,
+      &quot;subPromoType&quot;: 2,
+      &quot;promoId&quot;: 1537544225,
+      &quot;rewardPrice&quot;: 1.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 11.8,
+  &quot;discountPrice&quot;: 1.0,
+  &quot;benchPrice&quot;: 12.8,
+  &quot;startTime&quot;: &quot;2026-03-01 00:00:00&quot;,
+  &quot;endTime&quot;: &quot;2026-03-31 23:59:59&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    },
+    {
+      &quot;promoType&quot;: 3,
+      &quot;subPromoType&quot;: 2,
+      &quot;promoId&quot;: 1537544225,
+      &quot;rewardPrice&quot;: 1.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>0</td><td>int</td><td>one_item_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287389482 | storeId=1000002078</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287389482</td><td>int</td><td>sku_id</td><td>67287389482</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>带泥 胡萝卜 红萝卜 约500g/份</td><td>string</td><td>sku_name</td><td>带泥 胡萝卜 红萝卜 约500g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>生鲜</td><td>string</td><td>cname1</td><td>生鲜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>蔬菜</td><td>string</td><td>cname2</td><td>蔬菜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>根茎类</td><td>string</td><td>cname3</td><td>根茎类</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>35247</td><td>int</td><td>brand_id</td><td>35247</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>无品牌</td><td>string</td><td>brand_name</td><td>无品牌</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L5</td><td>string</td><td>brand_level</td><td>L5</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>三类货</td><td>string</td><td>goods_level</td><td>三类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000002078</td><td>string</td><td>store_id</td><td>1000002078</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-子君农贸店-8蛋1分</td><td>string</td><td>store_name</td><td>萝卜青菜-子君农贸店-8蛋1分</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td>E</td><td>string</td><td>gmv_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>salesBand</td><td>E</td><td>string</td><td>sales_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>pvBand</td><td></td><td>string</td><td>pv_band</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>6.8</td><td>float</td><td>deal_price</td><td>6.8</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>3.0</td><td>float</td><td>pricestar</td><td>3.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>仅自身</td><td>string</td><td>scope_type</td><td>仅自身</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>3</td><td>int</td><td>star</td><td>3</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>4</td><td>int</td><td>scope_type_num</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287389482
+haotengfei.terry
+带泥 胡萝卜 红萝卜 约500g/份</td><td>string</td><td>sku_info</td><td>67287389482
+haotengfei.terry
+带泥 胡萝卜 红萝卜 约500g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 6.8,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 6.8,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: null
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 6.8,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 6.8,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: null
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>0</td><td>int</td><td>one_item_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287389482 | storeId=1000002207</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287389482</td><td>int</td><td>sku_id</td><td>67287389482</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>带泥 胡萝卜 红萝卜 约500g/份</td><td>string</td><td>sku_name</td><td>带泥 胡萝卜 红萝卜 约500g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>生鲜</td><td>string</td><td>cname1</td><td>生鲜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>蔬菜</td><td>string</td><td>cname2</td><td>蔬菜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>根茎类</td><td>string</td><td>cname3</td><td>根茎类</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>35247</td><td>int</td><td>brand_id</td><td>35247</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>无品牌</td><td>string</td><td>brand_name</td><td>无品牌</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L5</td><td>string</td><td>brand_level</td><td>L5</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>三类货</td><td>string</td><td>goods_level</td><td>三类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000002207</td><td>string</td><td>store_id</td><td>1000002207</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-天丰利市场店</td><td>string</td><td>store_name</td><td>萝卜青菜-天丰利市场店</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td>E</td><td>string</td><td>gmv_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>salesBand</td><td>E</td><td>string</td><td>sales_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>pvBand</td><td></td><td>string</td><td>pv_band</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>4.8</td><td>float</td><td>deal_price</td><td>4.8</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td>99.9</td><td>float</td><td>one_item_min_price</td><td>99.9</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td>99991</td><td>string</td><td>one_item_min_price_sku</td><td>99991</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td>88.8</td><td>float</td><td>opp_min_price</td><td>88.8</td><td>float</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td>http://test.jd.com</td><td>string</td><td>opp_min_price_url</td><td>http://test.jd.com</td><td>string</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>5.0</td><td>float</td><td>pricestar</td><td>5.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>自身+O2O站内</td><td>string</td><td>scope_type</td><td>自身+O2O站内</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td>888881</td><td>string</td><td>opp_min_price_sku</td><td>888881</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td>27</td><td>string</td><td>opp_min_price_oppid</td><td>27</td><td>int</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>5</td><td>int</td><td>star</td><td>5</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>6</td><td>int</td><td>scope_type_num</td><td>6</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287389482
+haotengfei.terry
+带泥 胡萝卜 红萝卜 约500g/份</td><td>string</td><td>sku_info</td><td>67287389482
+haotengfei.terry
+带泥 胡萝卜 红萝卜 约500g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 4.8,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 4.8,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 4.8,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 4.8,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>1</td><td>int</td><td>one_item_cnt</td><td>1</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287389482 | storeId=1000081045</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287389482</td><td>int</td><td>sku_id</td><td>67287389482</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>带泥 胡萝卜 红萝卜 约500g/份</td><td>string</td><td>sku_name</td><td>带泥 胡萝卜 红萝卜 约500g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>生鲜</td><td>string</td><td>cname1</td><td>生鲜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>蔬菜</td><td>string</td><td>cname2</td><td>蔬菜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>根茎类</td><td>string</td><td>cname3</td><td>根茎类</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>35247</td><td>int</td><td>brand_id</td><td>35247</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>无品牌</td><td>string</td><td>brand_name</td><td>无品牌</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L5</td><td>string</td><td>brand_level</td><td>L5</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>三类货</td><td>string</td><td>goods_level</td><td>三类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000081045</td><td>string</td><td>store_id</td><td>1000081045</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-杨家渡市场店</td><td>string</td><td>store_name</td><td>萝卜青菜-杨家渡市场店</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td>E</td><td>string</td><td>gmv_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>salesBand</td><td>E</td><td>string</td><td>sales_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>pvBand</td><td></td><td>string</td><td>pv_band</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>4.64</td><td>float</td><td>deal_price</td><td>4.64</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>3.0</td><td>float</td><td>pricestar</td><td>3.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>仅自身</td><td>string</td><td>scope_type</td><td>仅自身</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>3</td><td>int</td><td>star</td><td>3</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>4</td><td>int</td><td>scope_type_num</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287389482
+haotengfei.terry
+带泥 胡萝卜 红萝卜 约500g/份</td><td>string</td><td>sku_info</td><td>67287389482
+haotengfei.terry
+带泥 胡萝卜 红萝卜 约500g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 4.64,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 4.64,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 4.64,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 4.64,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>0</td><td>int</td><td>one_item_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287393878 | storeId=1000001823</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287393878</td><td>int</td><td>sku_id</td><td>67287393878</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>干贝 （无盐渍） 约50g/份</td><td>string</td><td>sku_name</td><td>干贝 （无盐渍） 约50g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>生鲜</td><td>string</td><td>cname1</td><td>生鲜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>海鲜水产</td><td>string</td><td>cname2</td><td>海鲜水产</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>低温海产干货</td><td>string</td><td>cname3</td><td>低温海产干货</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>35247</td><td>int</td><td>brand_id</td><td>35247</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>无品牌</td><td>string</td><td>brand_name</td><td>无品牌</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L5</td><td>string</td><td>brand_level</td><td>L5</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>三类货</td><td>string</td><td>goods_level</td><td>三类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000001823</td><td>string</td><td>store_id</td><td>1000001823</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-学田湾店</td><td>string</td><td>store_name</td><td>萝卜青菜-学田湾店</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>salesBand</td><td><span style="color:#999">null</span></td><td>null</td><td>sales_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pvBand</td><td><span style="color:#999">null</span></td><td>null</td><td>pv_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>24.0</td><td>float</td><td>deal_price</td><td>24.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>3.0</td><td>float</td><td>pricestar</td><td>3.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>仅自身</td><td>string</td><td>scope_type</td><td>仅自身</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>3</td><td>int</td><td>star</td><td>3</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>4</td><td>int</td><td>scope_type_num</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287393878
+haotengfei.terry
+干贝 （无盐渍） 约50g/份</td><td>string</td><td>sku_info</td><td>67287393878
+haotengfei.terry
+干贝 （无盐渍） 约50g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 24.0,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 24.0,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 24.0,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 24.0,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>0</td><td>int</td><td>one_item_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287393878 | storeId=1000002009</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287393878</td><td>int</td><td>sku_id</td><td>67287393878</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>干贝 （无盐渍） 约50g/份</td><td>string</td><td>sku_name</td><td>干贝 （无盐渍） 约50g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>生鲜</td><td>string</td><td>cname1</td><td>生鲜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>海鲜水产</td><td>string</td><td>cname2</td><td>海鲜水产</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>低温海产干货</td><td>string</td><td>cname3</td><td>低温海产干货</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>35247</td><td>int</td><td>brand_id</td><td>35247</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>无品牌</td><td>string</td><td>brand_name</td><td>无品牌</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L5</td><td>string</td><td>brand_level</td><td>L5</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>三类货</td><td>string</td><td>goods_level</td><td>三类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000002009</td><td>string</td><td>store_id</td><td>1000002009</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-定福家园店</td><td>string</td><td>store_name</td><td>萝卜青菜-定福家园店</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>salesBand</td><td><span style="color:#999">null</span></td><td>null</td><td>sales_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pvBand</td><td><span style="color:#999">null</span></td><td>null</td><td>pv_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>25.0</td><td>float</td><td>deal_price</td><td>25.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>3.0</td><td>float</td><td>pricestar</td><td>3.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>仅自身</td><td>string</td><td>scope_type</td><td>仅自身</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>3</td><td>int</td><td>star</td><td>3</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>4</td><td>int</td><td>scope_type_num</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287393878
+haotengfei.terry
+干贝 （无盐渍） 约50g/份</td><td>string</td><td>sku_info</td><td>67287393878
+haotengfei.terry
+干贝 （无盐渍） 约50g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 25.0,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 25.0,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 25.0,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 25.0,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>0</td><td>int</td><td>one_item_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287407155 | storeId=1000001823</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287407155</td><td>int</td><td>sku_id</td><td>67287407155</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>牛棒骨  约2kg/份 火锅食材买菜做饭</td><td>string</td><td>sku_name</td><td>牛棒骨  约2kg/份 火锅食材买菜做饭</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>生鲜</td><td>string</td><td>cname1</td><td>生鲜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>猪牛羊肉</td><td>string</td><td>cname2</td><td>猪牛羊肉</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>牛肉</td><td>string</td><td>cname3</td><td>牛肉</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>35247</td><td>int</td><td>brand_id</td><td>35247</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>无品牌</td><td>string</td><td>brand_name</td><td>无品牌</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L5</td><td>string</td><td>brand_level</td><td>L5</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>三类货</td><td>string</td><td>goods_level</td><td>三类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000001823</td><td>string</td><td>store_id</td><td>1000001823</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-学田湾店</td><td>string</td><td>store_name</td><td>萝卜青菜-学田湾店</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td>E</td><td>string</td><td>gmv_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>salesBand</td><td>E</td><td>string</td><td>sales_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>pvBand</td><td></td><td>string</td><td>pv_band</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>gmv</td><td>45.2</td><td>float</td><td>gmv</td><td>45.2</td><td>float</td><td>一致</td></tr>
+<tr><td>sales</td><td>1</td><td>int</td><td>sales</td><td>1</td><td>int</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>45.0</td><td>float</td><td>deal_price</td><td>45.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>3.0</td><td>float</td><td>pricestar</td><td>3.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>仅自身</td><td>string</td><td>scope_type</td><td>仅自身</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td>1</td><td>int</td><td>last_30_days_sv</td><td>1</td><td>int</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>3</td><td>int</td><td>star</td><td>3</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>4</td><td>int</td><td>scope_type_num</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287407155
+haotengfei.terry
+牛棒骨  约2kg/份 火锅食材买菜做饭</td><td>string</td><td>sku_info</td><td>67287407155
+haotengfei.terry
+牛棒骨  约2kg/份 火锅食材买菜做饭</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 45.0,
+  &quot;discountPrice&quot;: 10.0,
+  &quot;benchPrice&quot;: 55.0,
+  &quot;startTime&quot;: &quot;2026-04-06 14:43:41&quot;,
+  &quot;endTime&quot;: &quot;2026-05-31 23:59:59&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    },
+    {
+      &quot;promoType&quot;: 3,
+      &quot;subPromoType&quot;: 4,
+      &quot;promoId&quot;: 1530525707,
+      &quot;rewardPrice&quot;: 10.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 45.0,
+  &quot;discountPrice&quot;: 10.0,
+  &quot;benchPrice&quot;: 55.0,
+  &quot;startTime&quot;: &quot;2026-04-06 14:43:41&quot;,
+  &quot;endTime&quot;: &quot;2026-05-31 23:59:59&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    },
+    {
+      &quot;promoType&quot;: 3,
+      &quot;subPromoType&quot;: 4,
+      &quot;promoId&quot;: 1530525707,
+      &quot;rewardPrice&quot;: 10.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>0</td><td>int</td><td>one_item_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287407155 | storeId=1000002067</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287407155</td><td>int</td><td>sku_id</td><td>67287407155</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>牛棒骨  约2kg/份 火锅食材买菜做饭</td><td>string</td><td>sku_name</td><td>牛棒骨  约2kg/份 火锅食材买菜做饭</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>生鲜</td><td>string</td><td>cname1</td><td>生鲜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>猪牛羊肉</td><td>string</td><td>cname2</td><td>猪牛羊肉</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>牛肉</td><td>string</td><td>cname3</td><td>牛肉</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>35247</td><td>int</td><td>brand_id</td><td>35247</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>无品牌</td><td>string</td><td>brand_name</td><td>无品牌</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L5</td><td>string</td><td>brand_level</td><td>L5</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>三类货</td><td>string</td><td>goods_level</td><td>三类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000002067</td><td>string</td><td>store_id</td><td>1000002067</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-南七马路优质菜店</td><td>string</td><td>store_name</td><td>萝卜青菜-南七马路优质菜店</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td>E</td><td>string</td><td>gmv_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>salesBand</td><td>E</td><td>string</td><td>sales_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>pvBand</td><td></td><td>string</td><td>pv_band</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>38.8</td><td>float</td><td>deal_price</td><td>38.8</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>3.0</td><td>float</td><td>pricestar</td><td>3.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>仅自身</td><td>string</td><td>scope_type</td><td>仅自身</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>3</td><td>int</td><td>star</td><td>3</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>4</td><td>int</td><td>scope_type_num</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287407155
+haotengfei.terry
+牛棒骨  约2kg/份 火锅食材买菜做饭</td><td>string</td><td>sku_info</td><td>67287407155
+haotengfei.terry
+牛棒骨  约2kg/份 火锅食材买菜做饭</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 38.8,
+  &quot;discountPrice&quot;: 14.0,
+  &quot;benchPrice&quot;: 52.8,
+  &quot;startTime&quot;: &quot;2026-05-01 06:15:53&quot;,
+  &quot;endTime&quot;: &quot;2026-05-31 23:59:59&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    },
+    {
+      &quot;promoType&quot;: 3,
+      &quot;subPromoType&quot;: 4,
+      &quot;promoId&quot;: 1578662581,
+      &quot;rewardPrice&quot;: 14.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 38.8,
+  &quot;discountPrice&quot;: 14.0,
+  &quot;benchPrice&quot;: 52.8,
+  &quot;startTime&quot;: &quot;2026-05-01 06:15:53&quot;,
+  &quot;endTime&quot;: &quot;2026-05-31 23:59:59&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    },
+    {
+      &quot;promoType&quot;: 3,
+      &quot;subPromoType&quot;: 4,
+      &quot;promoId&quot;: 1578662581,
+      &quot;rewardPrice&quot;: 14.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>0</td><td>int</td><td>one_item_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287407155 | storeId=1000002207</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287407155</td><td>int</td><td>sku_id</td><td>67287407155</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>牛棒骨  约2kg/份 火锅食材买菜做饭</td><td>string</td><td>sku_name</td><td>牛棒骨  约2kg/份 火锅食材买菜做饭</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>生鲜</td><td>string</td><td>cname1</td><td>生鲜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>猪牛羊肉</td><td>string</td><td>cname2</td><td>猪牛羊肉</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>牛肉</td><td>string</td><td>cname3</td><td>牛肉</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>35247</td><td>int</td><td>brand_id</td><td>35247</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>无品牌</td><td>string</td><td>brand_name</td><td>无品牌</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L5</td><td>string</td><td>brand_level</td><td>L5</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>三类货</td><td>string</td><td>goods_level</td><td>三类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000002207</td><td>string</td><td>store_id</td><td>1000002207</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-天丰利市场店</td><td>string</td><td>store_name</td><td>萝卜青菜-天丰利市场店</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td>E</td><td>string</td><td>gmv_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>salesBand</td><td>E</td><td>string</td><td>sales_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>pvBand</td><td></td><td>string</td><td>pv_band</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>41.0</td><td>float</td><td>deal_price</td><td>41.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>3.0</td><td>float</td><td>pricestar</td><td>3.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>仅自身</td><td>string</td><td>scope_type</td><td>仅自身</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>3</td><td>int</td><td>star</td><td>3</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>4</td><td>int</td><td>scope_type_num</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287407155
+haotengfei.terry
+牛棒骨  约2kg/份 火锅食材买菜做饭</td><td>string</td><td>sku_info</td><td>67287407155
+haotengfei.terry
+牛棒骨  约2kg/份 火锅食材买菜做饭</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 41.0,
+  &quot;discountPrice&quot;: 14.0,
+  &quot;benchPrice&quot;: 55.0,
+  &quot;startTime&quot;: &quot;2026-05-01 06:15:53&quot;,
+  &quot;endTime&quot;: &quot;2026-05-31 23:59:59&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    },
+    {
+      &quot;promoType&quot;: 3,
+      &quot;subPromoType&quot;: 4,
+      &quot;promoId&quot;: 1578662581,
+      &quot;rewardPrice&quot;: 14.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 41.0,
+  &quot;discountPrice&quot;: 14.0,
+  &quot;benchPrice&quot;: 55.0,
+  &quot;startTime&quot;: &quot;2026-05-01 06:15:53&quot;,
+  &quot;endTime&quot;: &quot;2026-05-31 23:59:59&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    },
+    {
+      &quot;promoType&quot;: 3,
+      &quot;subPromoType&quot;: 4,
+      &quot;promoId&quot;: 1578662581,
+      &quot;rewardPrice&quot;: 14.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>0</td><td>int</td><td>one_item_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287409366 | storeId=1000001991</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287409366</td><td>int</td><td>sku_id</td><td>67287409366</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>沙姜  约300g/份 蔬菜</td><td>string</td><td>sku_name</td><td>沙姜  约300g/份 蔬菜</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>生鲜</td><td>string</td><td>cname1</td><td>生鲜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>蔬菜</td><td>string</td><td>cname2</td><td>蔬菜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>葱姜蒜椒</td><td>string</td><td>cname3</td><td>葱姜蒜椒</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>35247</td><td>int</td><td>brand_id</td><td>35247</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>无品牌</td><td>string</td><td>brand_name</td><td>无品牌</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L5</td><td>string</td><td>brand_level</td><td>L5</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>三类货</td><td>string</td><td>goods_level</td><td>三类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000001991</td><td>string</td><td>store_id</td><td>1000001991</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-酒仙桥店</td><td>string</td><td>store_name</td><td>萝卜青菜-酒仙桥店</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td>F</td><td>string</td><td>gmv_band</td><td>F</td><td>string</td><td>一致</td></tr>
+<tr><td>salesBand</td><td>F</td><td>string</td><td>sales_band</td><td>F</td><td>string</td><td>一致</td></tr>
+<tr><td>pvBand</td><td></td><td>string</td><td>pv_band</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>20.69</td><td>float</td><td>deal_price</td><td>20.69</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>3.0</td><td>float</td><td>pricestar</td><td>3.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>仅自身</td><td>string</td><td>scope_type</td><td>仅自身</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>3</td><td>int</td><td>star</td><td>3</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>4</td><td>int</td><td>scope_type_num</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287409366
+haotengfei.terry
+沙姜  约300g/份 蔬菜</td><td>string</td><td>sku_info</td><td>67287409366
+haotengfei.terry
+沙姜  约300g/份 蔬菜</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 20.69,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 20.69,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 20.69,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 20.69,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>0</td><td>int</td><td>one_item_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287409366 | storeId=1000005349</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287409366</td><td>int</td><td>sku_id</td><td>67287409366</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>沙姜  约300g/份 蔬菜</td><td>string</td><td>sku_name</td><td>沙姜  约300g/份 蔬菜</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>生鲜</td><td>string</td><td>cname1</td><td>生鲜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>蔬菜</td><td>string</td><td>cname2</td><td>蔬菜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>葱姜蒜椒</td><td>string</td><td>cname3</td><td>葱姜蒜椒</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>35247</td><td>int</td><td>brand_id</td><td>35247</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>无品牌</td><td>string</td><td>brand_name</td><td>无品牌</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L5</td><td>string</td><td>brand_level</td><td>L5</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>三类货</td><td>string</td><td>goods_level</td><td>三类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000005349</td><td>string</td><td>store_id</td><td>1000005349</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-宏德利菜市场店</td><td>string</td><td>store_name</td><td>萝卜青菜-宏德利菜市场店</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td>F</td><td>string</td><td>gmv_band</td><td>F</td><td>string</td><td>一致</td></tr>
+<tr><td>salesBand</td><td>F</td><td>string</td><td>sales_band</td><td>F</td><td>string</td><td>一致</td></tr>
+<tr><td>pvBand</td><td></td><td>string</td><td>pv_band</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>26.0</td><td>float</td><td>deal_price</td><td>26.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>3.0</td><td>float</td><td>pricestar</td><td>3.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>仅自身</td><td>string</td><td>scope_type</td><td>仅自身</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>3</td><td>int</td><td>star</td><td>3</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>4</td><td>int</td><td>scope_type_num</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287409366
+haotengfei.terry
+沙姜  约300g/份 蔬菜</td><td>string</td><td>sku_info</td><td>67287409366
+haotengfei.terry
+沙姜  约300g/份 蔬菜</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 26.0,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 26.0,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 26.0,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 26.0,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>0</td><td>int</td><td>one_item_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287410454 | storeId=1000052036</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287410454</td><td>int</td><td>sku_id</td><td>67287410454</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>王守义麻辣鲜90g/袋</td><td>string</td><td>sku_name</td><td>王守义麻辣鲜90g/袋</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>粮油调味</td><td>string</td><td>cname1</td><td>粮油调味</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>调味品</td><td>string</td><td>cname2</td><td>调味品</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>辣鲜露/食品添加剂/特色调味料</td><td>string</td><td>cname3</td><td>辣鲜露/食品添加剂/特色调味料</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>17308</td><td>int</td><td>brand_id</td><td>17308</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>王守义</td><td>string</td><td>brand_name</td><td>王守义</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L1</td><td>string</td><td>brand_level</td><td>L1</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>一类货</td><td>string</td><td>goods_level</td><td>一类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000052036</td><td>string</td><td>store_id</td><td>1000052036</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-孟砦店</td><td>string</td><td>store_name</td><td>萝卜青菜-孟砦店</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td>F</td><td>string</td><td>gmv_band</td><td>F</td><td>string</td><td>一致</td></tr>
+<tr><td>salesBand</td><td>F</td><td>string</td><td>sales_band</td><td>F</td><td>string</td><td>一致</td></tr>
+<tr><td>pvBand</td><td></td><td>string</td><td>pv_band</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>3.59</td><td>float</td><td>deal_price</td><td>3.59</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>4.0</td><td>float</td><td>pricestar</td><td>4.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>自身+O2O站内</td><td>string</td><td>scope_type</td><td>自身+O2O站内</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td>站内同款低价,低于同款均价40%</td><td>string</td><td>all_price_tag_desc</td><td>站内同款低价,低于同款均价40%</td><td>string</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>4</td><td>int</td><td>star</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>6</td><td>int</td><td>scope_type_num</td><td>6</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td>2,4</td><td>string</td><td>all_price_tag</td><td>2,4</td><td>string</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287410454
+haotengfei.terry
+王守义麻辣鲜90g/袋</td><td>string</td><td>sku_info</td><td>67287410454
+haotengfei.terry
+王守义麻辣鲜90g/袋</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 3.59,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 3.59,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 3.59,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 3.59,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>1</td><td>int</td><td>one_item_cnt</td><td>1</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287420629 | storeId=1000001735</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287420629</td><td>int</td><td>sku_id</td><td>67287420629</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>陶华碧老干妈油辣椒275g/瓶</td><td>string</td><td>sku_name</td><td>陶华碧老干妈油辣椒275g/瓶</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>粮油调味</td><td>string</td><td>cname1</td><td>粮油调味</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>调味品</td><td>string</td><td>cname2</td><td>调味品</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>中式酱料</td><td>string</td><td>cname3</td><td>中式酱料</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>16737</td><td>int</td><td>brand_id</td><td>16737</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>陶华碧老干妈</td><td>string</td><td>brand_name</td><td>陶华碧老干妈</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L1</td><td>string</td><td>brand_level</td><td>L1</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>一类货</td><td>string</td><td>goods_level</td><td>一类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000001735</td><td>string</td><td>store_id</td><td>1000001735</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜（马家堡直营店）</td><td>string</td><td>store_name</td><td>萝卜青菜（马家堡直营店）</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>salesBand</td><td><span style="color:#999">null</span></td><td>null</td><td>sales_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pvBand</td><td><span style="color:#999">null</span></td><td>null</td><td>pv_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>15.0</td><td>float</td><td>deal_price</td><td>15.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>3.0</td><td>float</td><td>pricestar</td><td>3.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>仅自身</td><td>string</td><td>scope_type</td><td>仅自身</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>3</td><td>int</td><td>star</td><td>3</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>4</td><td>int</td><td>scope_type_num</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287420629
+haotengfei.terry
+陶华碧老干妈油辣椒275g/瓶</td><td>string</td><td>sku_info</td><td>67287420629
+haotengfei.terry
+陶华碧老干妈油辣椒275g/瓶</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 15.0,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 15.0,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: null
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 15.0,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 15.0,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: null
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>0</td><td>int</td><td>one_item_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287420629 | storeId=1000001867</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287420629</td><td>int</td><td>sku_id</td><td>67287420629</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>陶华碧老干妈油辣椒275g/瓶</td><td>string</td><td>sku_name</td><td>陶华碧老干妈油辣椒275g/瓶</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>粮油调味</td><td>string</td><td>cname1</td><td>粮油调味</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>调味品</td><td>string</td><td>cname2</td><td>调味品</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>中式酱料</td><td>string</td><td>cname3</td><td>中式酱料</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>16737</td><td>int</td><td>brand_id</td><td>16737</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>陶华碧老干妈</td><td>string</td><td>brand_name</td><td>陶华碧老干妈</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L1</td><td>string</td><td>brand_level</td><td>L1</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>一类货</td><td>string</td><td>goods_level</td><td>一类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000001867</td><td>string</td><td>store_id</td><td>1000001867</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-新贵都店</td><td>string</td><td>store_name</td><td>萝卜青菜-新贵都店</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>salesBand</td><td><span style="color:#999">null</span></td><td>null</td><td>sales_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pvBand</td><td><span style="color:#999">null</span></td><td>null</td><td>pv_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>13.9</td><td>float</td><td>deal_price</td><td>13.9</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>5.0</td><td>float</td><td>pricestar</td><td>5.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>自身+O2O站内</td><td>string</td><td>scope_type</td><td>自身+O2O站内</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>5</td><td>int</td><td>star</td><td>5</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>1.0</td><td>float</td><td>score</td><td>1.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>6</td><td>int</td><td>scope_type_num</td><td>6</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287420629
+haotengfei.terry
+陶华碧老干妈油辣椒275g/瓶</td><td>string</td><td>sku_info</td><td>67287420629
+haotengfei.terry
+陶华碧老干妈油辣椒275g/瓶</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 13.9,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 13.9,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 13.9,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 13.9,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>3</td><td>int</td><td>one_item_cnt</td><td>3</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287420629 | storeId=1000002170</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287420629</td><td>int</td><td>sku_id</td><td>67287420629</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>陶华碧老干妈油辣椒275g/瓶</td><td>string</td><td>sku_name</td><td>陶华碧老干妈油辣椒275g/瓶</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>粮油调味</td><td>string</td><td>cname1</td><td>粮油调味</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>调味品</td><td>string</td><td>cname2</td><td>调味品</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>中式酱料</td><td>string</td><td>cname3</td><td>中式酱料</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>16737</td><td>int</td><td>brand_id</td><td>16737</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>陶华碧老干妈</td><td>string</td><td>brand_name</td><td>陶华碧老干妈</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L1</td><td>string</td><td>brand_level</td><td>L1</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>一类货</td><td>string</td><td>goods_level</td><td>一类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000002170</td><td>string</td><td>store_id</td><td>1000002170</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-王妹冷鲜干杂</td><td>string</td><td>store_name</td><td>萝卜青菜-王妹冷鲜干杂</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>salesBand</td><td><span style="color:#999">null</span></td><td>null</td><td>sales_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pvBand</td><td><span style="color:#999">null</span></td><td>null</td><td>pv_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>13.0</td><td>float</td><td>deal_price</td><td>13.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>4.0</td><td>float</td><td>pricestar</td><td>4.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>自身+O2O站内</td><td>string</td><td>scope_type</td><td>自身+O2O站内</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>4</td><td>int</td><td>star</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.61</td><td>float</td><td>score</td><td>0.61</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>6</td><td>int</td><td>scope_type_num</td><td>6</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287420629
+haotengfei.terry
+陶华碧老干妈油辣椒275g/瓶</td><td>string</td><td>sku_info</td><td>67287420629
+haotengfei.terry
+陶华碧老干妈油辣椒275g/瓶</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 13.0,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 13.0,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: null
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 13.0,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 13.0,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: null
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>22</td><td>int</td><td>one_item_cnt</td><td>22</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287427739 | storeId=1018953548</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287427739</td><td>int</td><td>sku_id</td><td>67287427739</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>丘比沙拉汁 大拌菜口味 200ml/瓶</td><td>string</td><td>sku_name</td><td>丘比沙拉汁 大拌菜口味 200ml/瓶</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>粮油调味</td><td>string</td><td>cname1</td><td>粮油调味</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>调味品</td><td>string</td><td>cname2</td><td>调味品</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>西式酱料</td><td>string</td><td>cname3</td><td>西式酱料</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>14563</td><td>int</td><td>brand_id</td><td>14563</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>丘比</td><td>string</td><td>brand_name</td><td>丘比</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L1</td><td>string</td><td>brand_level</td><td>L1</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>一类货</td><td>string</td><td>goods_level</td><td>一类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1018953548</td><td>string</td><td>store_id</td><td>1018953548</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-华苑店</td><td>string</td><td>store_name</td><td>萝卜青菜-华苑店</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>salesBand</td><td><span style="color:#999">null</span></td><td>null</td><td>sales_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pvBand</td><td><span style="color:#999">null</span></td><td>null</td><td>pv_band</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>17.85</td><td>float</td><td>deal_price</td><td>17.85</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>1.0</td><td>float</td><td>pricestar</td><td>1.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>自身+O2O站内</td><td>string</td><td>scope_type</td><td>自身+O2O站内</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>1</td><td>int</td><td>star</td><td>1</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>6</td><td>int</td><td>scope_type_num</td><td>6</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287427739
+haotengfei.terry
+丘比沙拉汁 大拌菜口味 200ml/瓶</td><td>string</td><td>sku_info</td><td>67287427739
+haotengfei.terry
+丘比沙拉汁 大拌菜口味 200ml/瓶</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 17.85,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 17.85,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 17.85,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 17.85,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>4</td><td>int</td><td>one_item_cnt</td><td>4</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287438970 | storeId=1000001885</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287438970</td><td>int</td><td>sku_id</td><td>67287438970</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>豌豆尖  约250g/份</td><td>string</td><td>sku_name</td><td>豌豆尖  约250g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>生鲜</td><td>string</td><td>cname1</td><td>生鲜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>蔬菜</td><td>string</td><td>cname2</td><td>蔬菜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>叶菜类</td><td>string</td><td>cname3</td><td>叶菜类</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>51827</td><td>int</td><td>brand_id</td><td>51827</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>仁和</td><td>string</td><td>brand_name</td><td>仁和</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L2</td><td>string</td><td>brand_level</td><td>L2</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>一类货</td><td>string</td><td>goods_level</td><td>一类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000001885</td><td>string</td><td>store_id</td><td>1000001885</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-五道口集贸市场中心</td><td>string</td><td>store_name</td><td>萝卜青菜-五道口集贸市场中心</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td>E</td><td>string</td><td>gmv_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>salesBand</td><td>E</td><td>string</td><td>sales_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>pvBand</td><td></td><td>string</td><td>pv_band</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>14.0</td><td>float</td><td>deal_price</td><td>14.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>2.0</td><td>float</td><td>pricestar</td><td>2.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>仅自身</td><td>string</td><td>scope_type</td><td>仅自身</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>2</td><td>int</td><td>star</td><td>2</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>4</td><td>int</td><td>scope_type_num</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287438970
+haotengfei.terry
+豌豆尖  约250g/份</td><td>string</td><td>sku_info</td><td>67287438970
+haotengfei.terry
+豌豆尖  约250g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 14.0,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 14.0,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 14.0,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 14.0,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>0</td><td>int</td><td>one_item_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287438970 | storeId=1000001990</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287438970</td><td>int</td><td>sku_id</td><td>67287438970</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>豌豆尖  约250g/份</td><td>string</td><td>sku_name</td><td>豌豆尖  约250g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>生鲜</td><td>string</td><td>cname1</td><td>生鲜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>蔬菜</td><td>string</td><td>cname2</td><td>蔬菜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>叶菜类</td><td>string</td><td>cname3</td><td>叶菜类</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>51827</td><td>int</td><td>brand_id</td><td>51827</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>仁和</td><td>string</td><td>brand_name</td><td>仁和</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L2</td><td>string</td><td>brand_level</td><td>L2</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>一类货</td><td>string</td><td>goods_level</td><td>一类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000001990</td><td>string</td><td>store_id</td><td>1000001990</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-惠山路河海新村48号惠民生鲜</td><td>string</td><td>store_name</td><td>萝卜青菜-惠山路河海新村48号惠民生鲜</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td>E</td><td>string</td><td>gmv_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>salesBand</td><td>E</td><td>string</td><td>sales_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>pvBand</td><td></td><td>string</td><td>pv_band</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>7.5</td><td>float</td><td>deal_price</td><td>7.5</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>3.0</td><td>float</td><td>pricestar</td><td>3.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>仅自身</td><td>string</td><td>scope_type</td><td>仅自身</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>3</td><td>int</td><td>star</td><td>3</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>4</td><td>int</td><td>scope_type_num</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287438970
+haotengfei.terry
+豌豆尖  约250g/份</td><td>string</td><td>sku_info</td><td>67287438970
+haotengfei.terry
+豌豆尖  约250g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 7.5,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 7.5,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 7.5,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 7.5,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>0</td><td>int</td><td>one_item_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287438970 | storeId=1000002207</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287438970</td><td>int</td><td>sku_id</td><td>67287438970</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>豌豆尖  约250g/份</td><td>string</td><td>sku_name</td><td>豌豆尖  约250g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>生鲜</td><td>string</td><td>cname1</td><td>生鲜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>蔬菜</td><td>string</td><td>cname2</td><td>蔬菜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>叶菜类</td><td>string</td><td>cname3</td><td>叶菜类</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>51827</td><td>int</td><td>brand_id</td><td>51827</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>仁和</td><td>string</td><td>brand_name</td><td>仁和</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L2</td><td>string</td><td>brand_level</td><td>L2</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>一类货</td><td>string</td><td>goods_level</td><td>一类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000002207</td><td>string</td><td>store_id</td><td>1000002207</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-天丰利市场店</td><td>string</td><td>store_name</td><td>萝卜青菜-天丰利市场店</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td>E</td><td>string</td><td>gmv_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>salesBand</td><td>E</td><td>string</td><td>sales_band</td><td>E</td><td>string</td><td>一致</td></tr>
+<tr><td>pvBand</td><td></td><td>string</td><td>pv_band</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>gmv</td><td>43.83</td><td>float</td><td>gmv</td><td>43.83</td><td>float</td><td>一致</td></tr>
+<tr><td>sales</td><td>4</td><td>int</td><td>sales</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>16.8</td><td>float</td><td>deal_price</td><td>16.8</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>2.0</td><td>float</td><td>pricestar</td><td>2.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>仅自身</td><td>string</td><td>scope_type</td><td>仅自身</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td>1</td><td>int</td><td>last_30_days_sv</td><td>1</td><td>int</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>2</td><td>int</td><td>star</td><td>2</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>4</td><td>int</td><td>scope_type_num</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287438970
+haotengfei.terry
+豌豆尖  约250g/份</td><td>string</td><td>sku_info</td><td>67287438970
+haotengfei.terry
+豌豆尖  约250g/份</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 16.8,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 16.8,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 16.8,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 16.8,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>0</td><td>int</td><td>one_item_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+<details><summary>skuId=67287439368 | storeId=1000002067</summary>
+<table><thead><tr><th>new_data字段</th><th>new值</th><th>new类型</th><th>old_data字段</th><th>old值</th><th>old类型</th><th>结果</th></tr></thead><tbody>
+<tr><td>skuId</td><td>67287439368</td><td>int</td><td>sku_id</td><td>67287439368</td><td>int</td><td>一致</td></tr>
+<tr><td>dt</td><td>2026-05-20</td><td>string</td><td>dt</td><td>2026-05-20</td><td>string</td><td>一致</td></tr>
+<tr><td>skuType</td><td>pop</td><td>string</td><td>sku_type</td><td>pop</td><td>string</td><td>一致</td></tr>
+<tr><td>skuName</td><td>茭白 水笋 约200-250g /份 蔬菜</td><td>string</td><td>sku_name</td><td>茭白 水笋 约200-250g /份 蔬菜</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName0</td><td>大商超事业群</td><td>string</td><td>dept_name0</td><td>大商超事业群</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName1</td><td>大商超秒送业务部</td><td>string</td><td>dept_name1</td><td>大商超秒送业务部</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName2</td><td>花果烘焙组</td><td>string</td><td>dept_name2</td><td>花果烘焙组</td><td>string</td><td>一致</td></tr>
+<tr><td>deptName3</td><td>花果烘焙岗</td><td>string</td><td>dept_name3</td><td>花果烘焙岗</td><td>string</td><td>一致</td></tr>
+<tr><td>cname1</td><td>生鲜</td><td>string</td><td>cname1</td><td>生鲜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname2</td><td>蔬菜</td><td>string</td><td>cname2</td><td>蔬菜</td><td>string</td><td>一致</td></tr>
+<tr><td>cname3</td><td>根茎类</td><td>string</td><td>cname3</td><td>根茎类</td><td>string</td><td>一致</td></tr>
+<tr><td>brandId</td><td>51827</td><td>int</td><td>brand_id</td><td>51827</td><td>int</td><td>一致</td></tr>
+<tr><td>brandName</td><td>仁和</td><td>string</td><td>brand_name</td><td>仁和</td><td>string</td><td>一致</td></tr>
+<tr><td>brandLevel</td><td>L2</td><td>string</td><td>brand_level</td><td>L2</td><td>string</td><td>一致</td></tr>
+<tr><td>goodsLevel</td><td>一类货</td><td>string</td><td>goods_level</td><td>一类货</td><td>string</td><td>一致</td></tr>
+<tr><td>shopId</td><td>10195768</td><td>int</td><td>shop_id</td><td>10195768</td><td>int</td><td>一致</td></tr>
+<tr><td>shopName</td><td>萝卜青菜</td><td>string</td><td>shop_name</td><td>萝卜青菜</td><td>string</td><td>一致</td></tr>
+<tr><td>storeId</td><td>1000002067</td><td>string</td><td>store_id</td><td>1000002067</td><td>int</td><td>一致</td></tr>
+<tr><td>storeName</td><td>萝卜青菜-南七马路优质菜店</td><td>string</td><td>store_name</td><td>萝卜青菜-南七马路优质菜店</td><td>string</td><td>一致</td></tr>
+<tr><td>salerErp</td><td>haotengfei.terry</td><td>string</td><td>saler_erp</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>salerName</td><td>郝腾飞</td><td>string</td><td>saler_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>gmvBand</td><td>F</td><td>string</td><td>gmv_band</td><td>F</td><td>string</td><td>一致</td></tr>
+<tr><td>salesBand</td><td>F</td><td>string</td><td>sales_band</td><td>F</td><td>string</td><td>一致</td></tr>
+<tr><td>pvBand</td><td></td><td>string</td><td>pv_band</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>gmv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>sales</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>pv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>dealPrice</td><td>11.8</td><td>float</td><td>deal_price</td><td>11.8</td><td>float</td><td>一致</td></tr>
+<tr><td>oneItemMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>one_item_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oneItemMinPriceSku</td><td></td><td>string</td><td>one_item_min_price_sku</td><td></td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPrice</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceUrl</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_url</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>insiteValidSpuCount</td><td><span style="color:#999">null</span></td><td>null</td><td>insite_valid_spu_count</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>pricestar</td><td>3.0</td><td>float</td><td>pricestar</td><td>3.0</td><td>float</td><td>一致</td></tr>
+<tr><td>oppSkuCnt</td><td>0</td><td>int</td><td>opp_sku_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+<tr><td>scopeType</td><td>仅自身</td><td>string</td><td>scope_type</td><td>仅自身</td><td>string</td><td>一致</td></tr>
+<tr><td>allPriceTagDesc</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag_desc</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>updateTime</td><td>2026-05-20 00:00:00</td><td>string</td><td>update_time</td><td>2026-05-20 00:00:00</td><td>string</td><td>一致</td></tr>
+<tr><td>last30DaysSv</td><td><span style="color:#999">null</span></td><td>null</td><td>last_30_days_sv</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>operAccount</td><td>haotengfei.terry</td><td>string</td><td>oper_account</td><td>haotengfei.terry</td><td>string</td><td>一致</td></tr>
+<tr><td>operName</td><td>郝腾飞</td><td>string</td><td>oper_name</td><td>郝腾飞</td><td>string</td><td>一致</td></tr>
+<tr><td>oppMinPriceSku</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_sku</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppMinPriceOppid</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_min_price_oppid</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>oppName</td><td><span style="color:#999">null</span></td><td>null</td><td>opp_name</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>star</td><td>3</td><td>int</td><td>star</td><td>3</td><td>int</td><td>一致</td></tr>
+<tr><td>score</td><td>0.0</td><td>float</td><td>score</td><td>0.0</td><td>float</td><td>一致</td></tr>
+<tr><td>scopeTypeNum</td><td>4</td><td>int</td><td>scope_type_num</td><td>4</td><td>int</td><td>一致</td></tr>
+<tr><td>allPriceTag</td><td><span style="color:#999">null</span></td><td>null</td><td>all_price_tag</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>subSkuType</td><td><span style="color:#999">null</span></td><td>null</td><td>sub_sku_type</td><td><span style="color:#999">null</span></td><td>null</td><td>一致</td></tr>
+<tr><td>skuInfo</td><td>67287439368
+haotengfei.terry
+茭白 水笋 约200-250g /份 蔬菜</td><td>string</td><td>sku_info</td><td>67287439368
+haotengfei.terry
+茭白 水笋 约200-250g /份 蔬菜</td><td>string</td><td>一致</td></tr>
+<tr><td>dealPriceJson</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 11.8,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 11.8,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>deal_price_json</td><td><pre class="json-view">{
+  &quot;arrivalPrice&quot;: 11.8,
+  &quot;discountPrice&quot;: 0.0,
+  &quot;benchPrice&quot;: 11.8,
+  &quot;startTime&quot;: &quot;1970-01-01 08:00:00&quot;,
+  &quot;endTime&quot;: &quot;2999-08-16 00:00:00&quot;,
+  &quot;calcDetailList&quot;: [
+    {
+      &quot;promoType&quot;: 1,
+      &quot;subPromoType&quot;: 1,
+      &quot;promoId&quot;: null,
+      &quot;rewardPrice&quot;: 0.0
+    }
+  ],
+  &quot;taxes&quot;: null,
+  &quot;skuUnit&quot;: 1
+}</pre></td><td>string</td><td>一致</td></tr>
+<tr><td>oneItemCnt</td><td>0</td><td>int</td><td>one_item_cnt</td><td>0</td><td>int</td><td>一致</td></tr>
+</tbody></table></details>
+</body></html>

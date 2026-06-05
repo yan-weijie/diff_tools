@@ -32,7 +32,6 @@
           </div>
           <div v-if="activeModule === 'json'" class="header-actions">
             <button class="btn" @click="loadDemo">✨ 加载示例</button>
-            <button class="btn" @click="clearAll">⌫ 清空</button>
           </div>
           <div v-else class="header-actions">
             <button class="btn" @click="clearExcel">⌫ 清空</button>
@@ -77,8 +76,8 @@
                 <input
                   v-model="primaryKey"
                   class="input mono"
-                  placeholder="skuId, storeId"
-                  title="多字段用逗号/加号/空格分隔，留空则使用默认 skuId+storeId；自动适配 camel/snake 命名"
+                  placeholder="可选：skuId, storeId"
+                  title="多字段用逗号/加号/空格分隔；留空则按数据顺序逐条对比"
                 />
               </div>
               <div>
@@ -310,7 +309,7 @@ const newPanel = ref(null)
 const oldPanel = ref(null)
 const newPath = ref('$.data.list')
 const oldPath = ref('$.data.dataList')
-const primaryKey = ref('skuId, storeId')
+const primaryKey = ref('')
 const ignoreFields = ref('')
 const compareResult = ref(null)
 const compareError = ref('')
@@ -394,16 +393,6 @@ function loadDemo() {
   oldPath.value = '$.data.dataList'
   ignoreFields.value = ''
   toast.success('示例数据已加载，可点击 "开始对比"')
-}
-
-function clearAll() {
-  newPanel.value.setText('')
-  oldPanel.value.setText('')
-  compareResult.value = null
-  compareError.value = ''
-  pickFor.value = null
-  ignoreFields.value = ''
-  toast.info('已清空')
 }
 
 function onExcelFileChange(side, event) {

@@ -18,7 +18,7 @@
 | old_json | 是 | 旧接口JSON数据 | `{"code":200,"data":{"dataList":[...]}}` |
 | new_path | 否 | 新数据JsonPath | `$.data.list` |
 | old_path | 否 | 旧数据JsonPath | `$.data.dataList` |
-| primary_keys | 否 | 自定义联合主键（逗号/加号/空格分隔） | `skuId, storeId` 或 `id` |
+| primary_keys | 否 | 自定义联合主键（逗号/加号/空格分隔）；留空按记录顺序对比 | `skuId, storeId` 或 `id` |
 | ignore_fields | 否 | 忽略对比字段（逗号/加号/空格分隔，自动适配 camel/snake 与内置映射） | `updateTime, dealPrice` |
 
 ## 三、核心能力
@@ -54,7 +54,7 @@ storeId     ↔ store_id
 支持用户自定义主键字段（输入框可编辑），用于数组记录的匹配关联：
 - 多字段分隔：逗号 `,`、加号 `+`、空格均可
 - 自动 camel↔snake 互转（输入 `skuId` 也能匹配到数据中的 `sku_id`）
-- 留空或匹配失败时回退默认 `skuId + storeId`
+- 留空或匹配失败时按记录顺序逐条对齐，无需默认主键
 - 单对象无主键时使用 `__single__` 统一匹配
 
 功能：
@@ -161,7 +161,7 @@ npm run dev
   "ignore_fields": "updateTime, dealPrice"
 }
 ```
-- `primary_keys`：可选，字符串（逗号/加号/空格分隔）或数组。留空使用默认 skuId+storeId。
+- `primary_keys`：可选，字符串（逗号/加号/空格分隔）或数组。留空按记录顺序逐条对比。
 - `ignore_fields`：可选，字符串（逗号/加号/空格分隔）或数组。自动兼容 camel/snake 命名与内置字段映射。
 - 响应:
 ```json
@@ -200,7 +200,7 @@ npm run dev
 ### 7.2 配置区
 - **新数据 JsonPath** 输入框 + 🎯选取按钮（从可视化树点选路径）
 - **旧数据 JsonPath** 输入框 + 🎯选取按钮
-- **联合主键** 可编辑输入框（默认 `skuId, storeId`，支持逗号/加号/空格分隔）
+- **联合主键** 可编辑输入框（默认留空，支持逗号/加号/空格分隔；留空按记录顺序对比）
 - **忽略字段** 可编辑输入框（支持逗号/加号/空格分隔，自动适配 camel/snake 命名）
 - **开始对比** 按钮
 
